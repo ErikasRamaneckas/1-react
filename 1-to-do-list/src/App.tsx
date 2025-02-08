@@ -3,6 +3,7 @@ import './App.css';
 import TaskForm from './components/TaskForm.tsx';
 import TaskList from './components/TaskList.tsx';
 
+let nextId = 3;
 const initialTodos = [
   { id: 0, title: 'Buy milk', done: true },
   { id: 1, title: 'Eat tacos', done: true },
@@ -16,9 +17,20 @@ function App() {
     setTodos(todos.filter((t) => t.id !== todoId));
   }
 
+  function handleAddTodo(title) {
+    setTodos([
+      ...todos,
+      {
+        id: nextId++,
+        title: title,
+        done: false,
+      },
+    ]);
+  }
+
   return (
     <>
-      <TaskForm />
+      <TaskForm onAddToDo={handleAddTodo} />
       <TaskList todos={todos} onDeleteTodo={handleDeleteTodo} />
     </>
   );
