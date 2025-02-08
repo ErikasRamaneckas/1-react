@@ -1,3 +1,3 @@
-export default function TaskItem() {
-  return <></>;
+export default function TaskItem({ todo }) {
+  return <>{todo.title}</>;
 }
