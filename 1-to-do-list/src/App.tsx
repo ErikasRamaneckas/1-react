@@ -11,10 +11,15 @@ const initialTodos = [
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
+
+  function handleDeleteTodo(todoId) {
+    setTodos(todos.filter((t) => t.id !== todoId));
+  }
+
   return (
     <>
       <TaskForm />
-      <TaskList todos={todos} />
+      <TaskList todos={todos} onDeleteTodo={handleDeleteTodo} />
     </>
   );
 }

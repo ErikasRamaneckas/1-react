@@ -1,3 +1,8 @@
-export default function TaskItem({ todo }) {
-  return <>{todo.title}</>;
+export default function TaskItem({ todo, onDelete }) {
+  return (
+    <>
+      {todo.title}
+      <button onClick={() => onDelete(todo.id)}>Delete</button>
+    </>
+  );
 }
