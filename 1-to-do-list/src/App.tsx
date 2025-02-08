@@ -17,7 +17,19 @@ function App() {
     setTodos(todos.filter((t) => t.id !== todoId));
   }
 
-  function handleAddTodo(title) {
+  function handleChangeTodo(nextTodo) {
+    setTodos(
+      todos.map((t) => {
+        if (t.id === nextTodo.id) {
+          return nextTodo;
+        } else {
+          return t;
+        }
+      })
+    );
+  }
+
+  function handleAddTodo(title: string) {
     setTodos([
       ...todos,
       {
@@ -30,8 +42,12 @@ function App() {
 
   return (
     <>
-      <TaskForm onAddToDo={handleAddTodo} />
-      <TaskList todos={todos} onDeleteTodo={handleDeleteTodo} />
+      <TaskForm onAddTodo={handleAddTodo} />
+      <TaskList
+        todos={todos}
+        onChangeTodo={handleChangeTodo}
+        onDeleteTodo={handleDeleteTodo}
+      />
     </>
   );
 }

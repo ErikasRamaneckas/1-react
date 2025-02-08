@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TaskForm({ onAddToDo }) {
+export default function TaskForm({ onAddTodo }) {
   const [title, setTitle] = useState('');
   return (
     <>
@@ -12,7 +12,7 @@ export default function TaskForm({ onAddToDo }) {
       <button
         onClick={() => {
           setTitle('');
-          onAddToDo(title);
+          onAddTodo(title);
         }}
       >
         Add
