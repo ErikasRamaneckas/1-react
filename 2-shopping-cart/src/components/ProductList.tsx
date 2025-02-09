@@ -1,9 +1,15 @@
 import ProductItem from './ProductItem.tsx';
 
-export default function ProductList() {
+export default function ProductList({ products }) {
   return (
     <>
-      <ProductItem />
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            <ProductItem product={product} />
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
