@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProductList from './components/ProductList.tsx';
+import Cart from './components/Cart.tsx';
 import './App.css';
 
 const initialProducts = [
@@ -15,9 +16,27 @@ const initialProducts = [
 
 function App() {
   const [products, setProducts] = useState(initialProducts);
+  const [cartItems, setCartItems] = useState([]);
+
+  function handleAddProduct(productId: number) {
+    setCartItems((prevCartItems) => {
+      const productToAdd = products.find(
+        (product) => product.id === productId
+      );
+      return [...prevCartItems, { ...productToAdd }];
+    });
+  }
+
   return (
     <>
-      <ProductList products={products} />
+      <ProductList
+        products={products}
+        onAddProduct={handleAddProduct}
+      />
+      <Cart
+        cartItems={cartItems}
+        onRemoveProduct={handleAddProduct}
+      />
     </>
   );
 }
