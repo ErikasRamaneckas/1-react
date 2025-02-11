@@ -1,7 +1,12 @@
 import './App.css';
+import GuessGame from './components/GuessGame.tsx';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <GuessGame />
+    </>
+  );
 }
 
 export default App;
