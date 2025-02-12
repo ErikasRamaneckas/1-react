@@ -1,17 +1,29 @@
+import { useState } from 'react';
 import GuessForm from './GuessForm.tsx';
-import Message from './Message.tsx';
 
 function generateRandNum() {
   return Math.floor(Math.random() * 100) + 1;
 }
 
 export default function GuessGame() {
-  generateRandNum();
+  const [randNum] = useState(generateRandNum());
+  const [guess, setGuess] = useState('');
+
+  function handleGuess(e) {
+    e.preventDefault();
+    console.log('Form submitted!');
+    if (Number(guess) === randNum) {
+      console.log('you win!');
+    }
+  }
   return (
     <>
-      <h3>{generateRandNum()}</h3>
-      <GuessForm />
-      <Message />
+      <h3>{randNum}</h3>
+      <GuessForm
+        guess={guess}
+        setGuess={setGuess}
+        onGuess={handleGuess}
+      />
     </>
   );
 }
