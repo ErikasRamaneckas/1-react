@@ -1,3 +1,7 @@
-export default function Message() {
-  return <></>;
+export default function Message({ message }) {
+  return (
+    <>
+      <p>{message}</p>
+    </>
+  );
 }
