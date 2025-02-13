@@ -1,9 +1,17 @@
-export default function TaskItem({ todo, onChange, onDelete }) {
+export default function TaskItem({
+  todo,
+  onChange,
+  onDelete,
+}: {
+  todo: Todo;
+  onChange: ChangeTodo;
+  onDelete: DeleteTodo;
+}) {
   return (
     <label>
       <input
         type="checkbox"
-        checked={todo.done}
+        checked={todo.completed}
         onChange={(e) => {
           onChange({ ...todo, done: e.target.checked });
         }}

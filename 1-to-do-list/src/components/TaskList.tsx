@@ -4,11 +4,15 @@ export default function TaskList({
   todos,
   onChangeTodo,
   onDeleteTodo,
+}: {
+  todos: Todo[];
+  onChangeTodo: ChangeTodo;
+  onDeleteTodo: DeleteTodo;
 }) {
   return (
     <>
       <ul>
-        {todos.map((todo) => (
+        {todos.map((todo: Todo) => (
           <li key={todo.id}>
             <TaskItem
               todo={todo}

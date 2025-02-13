@@ -1,9 +1,13 @@
 import { useState } from 'react';
 
-export default function TaskForm({ onAddTodo }) {
+export default function TaskForm({
+  onAddTodo,
+}: {
+  onAddTodo: AddTodo;
+}) {
   const [title, setTitle] = useState('');
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     onAddTodo(title);
     setTitle('');
