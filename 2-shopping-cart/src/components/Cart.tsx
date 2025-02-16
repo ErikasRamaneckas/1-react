@@ -3,7 +3,7 @@ import ProductItem from './ProductItem.tsx';
 export default function Cart({ cartItems, onRemoveProduct }) {
   return (
     <>
-      <h2>Cart</h2>
+      <h2 className="text-4xl">Cart Items</h2>
       <ul>
         {cartItems.map((cartItem) => (
           <li key={cartItem.id}>

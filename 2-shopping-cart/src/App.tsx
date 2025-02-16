@@ -29,6 +29,7 @@ function App() {
 
   return (
     <>
+      <h1 className="text-7xl mb-10">Shopping Cart</h1>
       <ProductList
         products={products}
         onAddProduct={handleAddProduct}
