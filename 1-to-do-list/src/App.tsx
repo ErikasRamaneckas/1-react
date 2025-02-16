@@ -42,6 +42,7 @@ function App() {
 
   return (
     <>
+      <h1 className="text-7xl mb-10">To-Do List</h1>
       <TaskForm onAddTodo={handleAddTodo} />
       <TaskList
         todos={todos}

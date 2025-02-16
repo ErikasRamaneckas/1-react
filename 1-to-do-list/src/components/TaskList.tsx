@@ -11,6 +11,7 @@ export default function TaskList({
 }) {
   return (
     <>
+      <h2 className="text-4xl">Task List</h2>
       <ul>
         {todos.map((todo: Todo) => (
           <li key={todo.id}>
