@@ -27,6 +27,10 @@ function App() {
   const [cartItems, setCartItems] = useState<Product[]>([]);
 
   function handleAddProduct(productId: number) {
+    if (cartItems.find((i) => i.id === productId)) {
+      alert('Product already exist in the cart!');
+      return;
+    }
     setCartItems((prevCartItems) => {
       const productToAdd = products.find(
         (product) => product.id === productId
