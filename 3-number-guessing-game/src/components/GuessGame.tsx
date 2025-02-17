@@ -7,17 +7,19 @@ function generateRandNum() {
 }
 
 export default function GuessGame() {
-  const [randNum] = useState(generateRandNum());
+  const [randNum, setRandNum] = useState(generateRandNum());
   const [guess, setGuess] = useState('');
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [message, setMessage] = useState('');
+  console.log(randNum);
 
-  function handleGuess(e) {
+  function handleGuess(e: React.FormEvent) {
     e.preventDefault();
-    console.log('Form submitted!');
     if (Number(guess) === randNum) {
-      console.log('you win!');
-      setMessage('You win');
+      setMessage('You win, enter your guess to play again');
+      setNumberOfGuesses(0);
+      setGuess('');
+      setRandNum(generateRandNum());
       return;
     }
     setNumberOfGuesses(numberOfGuesses + 1);
@@ -29,8 +31,9 @@ export default function GuessGame() {
   }
   return (
     <>
-      <h3>{randNum}</h3>
-      <p className="text-2xl">Number of guesses: {numberOfGuesses}</p>
+      <p className="text-2xl mb-10">
+        Number of guesses: {numberOfGuesses}
+      </p>
       <GuessForm
         guess={guess}
         setGuess={setGuess}

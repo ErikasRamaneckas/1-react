@@ -1,4 +1,5 @@
-export default function GuessForm({ guess, setGuess, onGuess }) {
+export default function GuessForm({ guess, setGuess, onGuess } {
+}) {
   return (
     <>
       <form className="mb-5 flex justify-between" onSubmit={onGuess}>
