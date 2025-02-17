@@ -1,7 +1,7 @@
 export default function Message({ message }) {
   return (
     <>
-      <p>{message}</p>
+      <p className="text-2xl">{message}</p>
     </>
   );
 }

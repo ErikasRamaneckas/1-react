@@ -30,7 +30,7 @@ export default function GuessGame() {
   return (
     <>
       <h3>{randNum}</h3>
-      <p>Number of guesses: {numberOfGuesses}</p>
+      <p className="text-2xl">Number of guesses: {numberOfGuesses}</p>
       <GuessForm
         guess={guess}
         setGuess={setGuess}
