@@ -3,20 +3,28 @@ import ProductList from './components/ProductList.tsx';
 import Cart from './components/Cart.tsx';
 import './App.css';
 
-const initialProducts = [
+const initialProducts: Product[] = [
   {
     id: 1,
-    name: 'test1',
+    title: 'Basic Widget',
   },
   {
     id: 2,
-    name: 'test2',
+    title: 'Cool Gadget',
+  },
+  {
+    id: 3,
+    title: 'Tech Box',
+  },
+  {
+    id: 4,
+    title: 'Sleek Phone Case',
   },
 ];
 
 function App() {
   const [products, setProducts] = useState(initialProducts);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<Product[]>([]);
 
   function handleAddProduct(productId: number) {
     setCartItems((prevCartItems) => {
@@ -25,6 +33,10 @@ function App() {
       );
       return [...prevCartItems, { ...productToAdd }];
     });
+  }
+
+  function handleRemoveProduct(productId: number) {
+    setCartItems(cartItems.filter((i) => i.id !== productId));
   }
 
   return (
@@ -36,7 +48,7 @@ function App() {
       />
       <Cart
         cartItems={cartItems}
-        onRemoveProduct={handleAddProduct}
+        onRemoveProduct={handleRemoveProduct}
       />
     </>
   );

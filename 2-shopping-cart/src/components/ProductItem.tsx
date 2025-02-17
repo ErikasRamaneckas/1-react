@@ -2,13 +2,26 @@ export default function ProductItem({
   product,
   onButtonClick,
   buttonLabel,
+  buttonColor,
+}: {
+  product: Product;
+  onButtonClick: OnButtonClick;
+  buttonLabel: string;
+  buttonColor: string;
 }) {
+  let color = '';
+  if (buttonColor === 'red') {
+    color = 'bg-red-500';
+  } else if (buttonColor === 'sky') {
+    color = 'bg-sky-500';
+  }
+
   return (
-    <div className="text-xl">
-      {product.id} {product.name}
+    <div className="my-5 flex justify-between text-xl">
+      {product.title}
       {/* classname pagal label ir naudoti ternary operator */}
       <button
-        className="px-3 py-2 bg-sky-500 text-white rounded-md transition-color duration-200 hover:bg-sky-600 cursor-pointer"
+        className={`px-3 ${color} py-2 text-white rounded-md transition-color duration-200  cursor-pointer`}
         onClick={() => onButtonClick(product.id)}
       >
         {buttonLabel}
