@@ -12,7 +12,7 @@ export default function GuessGame() {
   const [guess, setGuess] = useState('');
   const [numberOfGuesses, setNumberOfGuesses] = useState(0);
   const [message, setMessage] = useState('');
-  console.log(randNum);
+
   function handleGuess(e: React.FormEvent) {
     e.preventDefault();
     setGuess('');

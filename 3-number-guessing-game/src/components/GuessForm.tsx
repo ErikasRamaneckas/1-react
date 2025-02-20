@@ -4,11 +4,7 @@ export default function GuessForm({
   guess,
   setGuess,
   onGuess,
-}: {
-  guess: string;
-  setGuess: React.Dispatch<React.SetStateAction<string>>;
-  onGuess: (e: React.FormEvent) => void;
-}) {
+}: GuessFormProps) {
   return (
     <>
       <form className="mb-5 flex justify-between" onSubmit={onGuess}>

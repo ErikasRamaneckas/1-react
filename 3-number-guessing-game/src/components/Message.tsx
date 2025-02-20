@@ -1,7 +1,7 @@
-export default function Message({ message }: { message: string }) {
+export default function Message({ message }: MessageProps) {
   return (
     <>
-      <p className="text-2xl">{message}</p>
+      <p className="text-2xl text-center">{message}</p>
     </>
   );
 }
