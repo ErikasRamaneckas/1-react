@@ -8,10 +8,15 @@ export default function TaskItem({
   onDelete: DeleteTodo;
 }) {
   return (
-    <div className="my-5 flex justify-between">
-      <label className="mr-5 text-xl text-wrap cursor-pointer">
+    <>
+      <label
+        htmlFor="taskCompleted"
+        className="mr-6 text-xl cursor-pointer"
+      >
         <input
-          className="accent-sky-500 hover:accent-sky-600 mr-1 cursor-pointer"
+          id="taskCompleted"
+          name="taskCompleted"
+          className="accent-sky-500 hover:accent-sky-600 mr-1"
           type="checkbox"
           checked={todo.completed}
           onChange={(e) => {
@@ -27,6 +32,6 @@ export default function TaskItem({
       >
         Delete
       </button>
-    </div>
+    </>
   );
 }

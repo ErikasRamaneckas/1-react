@@ -10,11 +10,14 @@ export default function TaskList({
   onDeleteTodo: DeleteTodo;
 }) {
   return (
-    <>
-      <h2 className="text-4xl">Task List</h2>
+    <div>
+      <h2 className="text-4xl text-center">Task List</h2>
       <ul>
         {todos.map((todo: Todo) => (
-          <li key={todo.id}>
+          <li
+            key={todo.id}
+            className="flex items-center justify-between my-3"
+          >
             <TaskItem
               todo={todo}
               onChange={onChangeTodo}
@@ -23,6 +26,6 @@ export default function TaskList({
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
