@@ -4,11 +4,7 @@ export default function TaskList({
   todos,
   onChangeTodo,
   onDeleteTodo,
-}: {
-  todos: Todo[];
-  onChangeTodo: ChangeTodo;
-  onDeleteTodo: DeleteTodo;
-}) {
+}: TaskListProps) {
   return (
     <div>
       <h2 className="text-4xl text-center">Task List</h2>
