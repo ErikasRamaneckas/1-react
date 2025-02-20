@@ -40,7 +40,7 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-start">
+    <main className="flex flex-col items-center justify-start">
       <h1 className="text-6xl my-10">To-Do List</h1>
       <TaskForm onAddTodo={handleAddTodo} />
       <TaskList
@@ -48,6 +48,6 @@ export default function App() {
         onChangeTodo={handleChangeTodo}
         onDeleteTodo={handleDeleteTodo}
       />
-    </div>
+    </main>
   );
 }
