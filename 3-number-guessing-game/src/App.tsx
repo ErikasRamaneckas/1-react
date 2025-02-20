@@ -3,10 +3,12 @@ import GuessGame from './components/GuessGame.tsx';
 
 function App() {
   return (
-    <>
-      <h1 className="text-4xl mb-10">Number Guessing Game</h1>
+    <main className="flex flex-col items-center justify-start">
+      <h1 className="text-6xl text-center my-10">
+        Number Guessing Game
+      </h1>
       <GuessGame />
-    </>
+    </main>
   );
 }
 
