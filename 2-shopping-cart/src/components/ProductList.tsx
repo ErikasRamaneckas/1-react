@@ -3,10 +3,7 @@ import ProductItem from './ProductItem.tsx';
 export default function ProductList({
   products,
   onAddProduct,
-}: {
-  products: Product[];
-  onAddProduct: OnButtonClick;
-}) {
+}: ProductListProps) {
   return (
     <>
       <h2 className="text-4xl">Product List</h2>

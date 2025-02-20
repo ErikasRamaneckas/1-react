@@ -3,10 +3,7 @@ import ProductItem from './ProductItem.tsx';
 export default function Cart({
   cartItems,
   onRemoveProduct,
-}: {
-  cartItems: Product[];
-  onRemoveProduct: OnButtonClick;
-}) {
+}: CartProps) {
   return (
     <>
       <h2 className="text-4xl">Cart Items</h2>

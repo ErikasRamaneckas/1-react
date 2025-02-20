@@ -23,12 +23,12 @@ declare global {
     onDelete: DeleteTodo;
   };
 
-  interface ButtonProps {
+  type ButtonProps = {
     onClick: () => void;
     children: React.ReactNode;
     className?: string;
     type?: 'button' | 'submit';
-  }
+  };
 
   type AddTodo = {
     (title: string): void;
