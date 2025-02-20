@@ -21,7 +21,7 @@ export default function TaskForm({
       <label className="font-sans text-gray-700" htmlFor="">
         Task title:{' '}
         <input
-          className="caret-sky-600 bg-gray-100 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-3xs"
+          className="caret-sky-600 bg-gray-100 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 w-3xs mr-5"
           placeholder="Task title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}

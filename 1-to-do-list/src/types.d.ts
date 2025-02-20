@@ -2,7 +2,7 @@ export {};
 
 declare global {
   type Todo = {
-    id: number;
+    id: string;
     title: string;
     completed: boolean;
   };
@@ -12,10 +12,10 @@ declare global {
   };
 
   type ChangeTodo = {
-    (nextTodo: ToDo): void;
+    (nextTodo: Todo): void;
   };
 
   type DeleteTodo = {
-    (id: number): void;
+    (id: string): void;
   };
 }
