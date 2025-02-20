@@ -2,11 +2,11 @@ export {};
 
 declare global {
   type Product = {
-    id: number;
+    id: string;
     title: string;
   };
 
   type OnButtonClick = {
-    (productId: number): void;
+    (productId: string): void;
   };
 }

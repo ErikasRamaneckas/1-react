@@ -5,47 +5,48 @@ import './App.css';
 
 const initialProducts: Product[] = [
   {
-    id: 1,
-    title: 'Basic Widget',
+    id: crypto.randomUUID(),
+    title: 'Bread',
   },
   {
-    id: 2,
-    title: 'Cool Gadget',
+    id: crypto.randomUUID(),
+    title: 'Butter',
   },
   {
-    id: 3,
-    title: 'Tech Box',
+    id: crypto.randomUUID(),
+    title: 'Milk',
   },
   {
-    id: 4,
-    title: 'Sleek Phone Case',
+    id: crypto.randomUUID(),
+    title: 'Cheese',
   },
 ];
 
-function App() {
-  const [products, setProducts] = useState(initialProducts);
+export default function App() {
+  const [products, setProducts] =
+    useState<Product[]>(initialProducts);
   const [cartItems, setCartItems] = useState<Product[]>([]);
 
-  function handleAddProduct(productId: number) {
-    if (cartItems.find((i) => i.id === productId)) {
-      alert('Product already exist in the cart!');
+  function handleAddProduct(productId: string) {
+    if (cartItems.some((item) => item.id === productId)) {
+      alert('Item already exists in the cart!');
       return;
     }
-    setCartItems((prevCartItems) => {
-      const productToAdd = products.find(
-        (product) => product.id === productId
-      );
-      return [...prevCartItems, { ...productToAdd }];
-    });
+
+    const productToAdd = products.find(
+      (item) => item.id === productId
+    )!;
+
+    setCartItems((prevCartItems) => [...prevCartItems, productToAdd]);
   }
 
-  function handleRemoveProduct(productId: number) {
-    setCartItems(cartItems.filter((i) => i.id !== productId));
+  function handleRemoveProduct(productId: string) {
+    setCartItems(cartItems.filter((item) => item.id !== productId));
   }
 
   return (
-    <>
-      <h1 className="text-7xl mb-10">Shopping Cart</h1>
+    <main className="flex flex-col items-center justify-start">
+      <h1 className="text-6xl mb-10">Shopping Cart</h1>
       <ProductList
         products={products}
         onAddProduct={handleAddProduct}
@@ -54,8 +55,6 @@ function App() {
         cartItems={cartItems}
         onRemoveProduct={handleRemoveProduct}
       />
-    </>
+    </main>
   );
 }
-
-export default App;

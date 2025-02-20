@@ -12,12 +12,14 @@ export default function Cart({
       <h2 className="text-4xl">Cart Items</h2>
       <ul>
         {cartItems.map((cartItem: Product) => (
-          <li key={cartItem.id}>
+          <li
+            key={cartItem.id}
+            className="flex items-center justify-between my-3"
+          >
             <ProductItem
               product={cartItem}
               onButtonClick={onRemoveProduct}
               buttonLabel="Remove"
-              buttonColor="red"
             />
           </li>
         ))}
